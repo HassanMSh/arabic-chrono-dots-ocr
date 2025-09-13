@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>النتائج</h2>
+  {% if events %}
+    {% for e in events %}
+      <div class="event">
+        <strong>{{ e.date }}</strong>
+        <p>{{ e.text }}</p>
+        <a href="/edit/{{ e.id }}">✏️ تعديل</a>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>لا يوجد نتائج.</p>
+  {% endif %}
+  <p><a href="/">🔙 رجوع</a></p>
+{% endblock %}

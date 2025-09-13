@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+  <form action="/results" method="get">
+    <label>من تاريخ:</label>
+    <input type="text" name="from_date" placeholder="١٩٤٩/٨/١">
+    <label>إلى تاريخ:</label>
+    <input type="text" name="to_date" placeholder="١٩٥٠/٧/٣١">
+    <button type="submit">بحث</button>
+  </form>
+{% endblock %}

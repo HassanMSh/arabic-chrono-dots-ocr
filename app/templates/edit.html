@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>تعديل حدث</h2>
+  <form action="/edit/{{ event.id }}" method="post">
+    <label>التاريخ:</label>
+    <p>{{ event.date }}</p>
+    <label>النص:</label>
+    <textarea name="new_text">{{ event.text }}</textarea>
+    <button type="submit">💾 حفظ</button>
+  </form>
+  <p><a href="/results?from_date={{ event.date }}&to_date={{ event.date }}">🔙 رجوع للنتائج</a></p>
+{% endblock %}
