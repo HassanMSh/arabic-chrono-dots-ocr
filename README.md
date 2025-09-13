@@ -21,3 +21,9 @@ python -m scripts.download_model # around 2.2GB
 ```
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8080
 ```
+
+## Run the model alone
+
+```
+uvicorn model.dots_ocr_4b:ocr_app --host 0.0.0.0 --port 8000
+```
