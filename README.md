@@ -12,7 +12,8 @@ pip3 install -r requirements.txt
 
 ```bash
 # Install the custom code and dependencies
-pip install torch transformers accelerate bitsandbytes peft sentencepiece # around 5GB
+pip install -r requirements.txt # around 5GB
+pip install flash-attn==2.8.3 --no-build-isolation
 python -m scripts.download_model # around 2.2GB
 ```
 
@@ -30,7 +31,7 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8080
 uvicorn model.dots_ocr_4b:ocr_app --host 0.0.0.0 --port 8000
 ```
 ```bash
-python -m scripts.run_etls
+python -m scripts.run_etl
 ```
 
 ## Info

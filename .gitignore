@@ -4,12 +4,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# flash-attn cache
+flash-attention/
+
 # venv
 venv/
 
 # data
 data/input_pdfs
-
+data/checkpoints
 # Snapshot files
 model/snapshot/
 

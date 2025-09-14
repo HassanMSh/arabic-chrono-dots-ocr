@@ -6,6 +6,7 @@ from transformers import AutoModelForCausalLM, AutoProcessor
 from qwen_vl_utils import process_vision_info
 import io, json
 from pathlib import Path
+from huggingface_hub import snapshot_download
 
 # Fixed default prompt (same as in your script)
 DEFAULT_PROMPT = """\
@@ -23,18 +24,10 @@ Please output the layout information from the image, including each layout eleme
 5. Final Output: The entire output must be a single JSON object.\
 """
 
-SNAPSHOT_DIR = Path("model/snapshot")
-
-if not SNAPSHOT_DIR.exists():
-    raise RuntimeError(
-        f"❌ Model snapshot not found at {SNAPSHOT_DIR}. "
-        "Run `python -m scripts.download_model` first to fetch it."
-    )
-
-print(f"✅ Using local model snapshot at {SNAPSHOT_DIR}")
+MODEL_ID = "helizac/dots.ocr-4bit"
 
 # Load model once at startup
-local_model_path = "model/snapshot" 
+local_model_path = snapshot_download(repo_id=MODEL_ID)
 
 model = AutoModelForCausalLM.from_pretrained(
     local_model_path,

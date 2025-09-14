@@ -5,7 +5,7 @@ from app.ui import ui as ui_app  # make sure in ui.py you named it `ui = FastAPI
 # This is the FastAPI instance uvicorn will look for
 app = FastAPI()
 
-# # Mount the OCR API at /api
+# # # Mount the OCR API at /api
 # app.mount("/api", ocr_app)
 
 # Mount the UI at /
